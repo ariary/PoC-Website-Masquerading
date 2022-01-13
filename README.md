@@ -2,7 +2,7 @@
 PoC on how to impersonnate/masquerade a website for a target device
 
 <div align=center>
-<p><strong><pre><code>Or why you should be cautious when running unknown source script with sudo</code></pre></strong></p>
+<p><strong><pre><code>Another good reason to be careful when running script from untrusted source with sudo, or to not give to all users root capabilities</code></pre></strong></p>
 </div>
 Met en evidence que l'utilisation de sudo [script] est dangereux quand on connait pas le script
 
