@@ -14,6 +14,8 @@ Met en evidence que l'utilisation de sudo [script] est dangereux quand on connai
 curl https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -LO
 
 ./mkcert -install ~creation key + cert + cert in trust store exemple pour Firefox in ~/.mozilla/certificates
+https://wiki.mozilla.org/CA/AddRootToFirefox
+https://betterprogramming.pub/trusted-self-signed-certificate-and-local-domains-for-testing-7c6e6e3f9548
 ./mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
 
 ./mkcert -key-file key.pem -cert-file cert.pem github.com localhost 127.0.0.1 ::1
