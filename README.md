@@ -11,3 +11,9 @@ Met en evidence que l'utilisation de sudo [script] est dangereux quand on connai
 
 ./mkcert -install
 ./mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+
+
+CLEAN
+mkcert -uninstall
+./mkcert -CAROOT --> Chemin 
+rm -rf $(./mkcert -CAROOT)
