@@ -7,3 +7,7 @@ Met en evidence que l'utilisation de sudo [script] est dangereux quand on connai
 2. Lancer serveur local (comme on a sudo on peut utiliser 443): page spawn
 3. utiliser mkcert pour trust le certif
 4. 
+
+
+./mkcert -install
+./mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
