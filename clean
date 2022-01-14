@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkcert -uninstall && rm -rf $(./mkcert -CAROOT)
+sed -i '/ThiSiSPoCIMP3rs0N4te/d' /etc/hosts
