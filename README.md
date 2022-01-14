@@ -2,7 +2,7 @@
 <p><strong><code>Another good reason to be careful when running script from untrusted source with sudo, or to not give to all users root capabilities</code></strong></p>
 </div>
 
-|DEMO|
+|DEMO  🎭 |
 |:---:| 
 |![demo](https://github.com/ariary/PoC-Website-Masquerading/blob/main/poc.gif)|
 
