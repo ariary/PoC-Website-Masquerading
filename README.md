@@ -4,7 +4,7 @@
 
 |DEMO|
 |:---:| 
-|![demo](https://github.com/ariary/JSextractor/blob/main/img/jse-tui.gif)|
+|![demo](https://github.com/ariary/PoC-Website-Masquerading/blob/main/poc.gif)|
 
 ## PoC
 
