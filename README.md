@@ -31,41 +31,9 @@ See that you aren't were you wanted to. (You reach the local server)
 It stops local server, withdraws certs in trust store, and put `/etc/hosts` as it was before the PoC
 
 
+### Notes
 
-
-
-
-curl https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -LO
-
-./mkcert -install ~creation key + cert + cert in trust store exemple pour Firefox in ~/.mozilla/certificates
-https://wiki.mozilla.org/CA/AddRootToFirefox
-https://betterprogramming.pub/trusted-self-signed-certificate-and-local-domains-for-testing-7c6e6e3f9548
-./mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
-
-./mkcert -key-file key.pem -cert-file cert.pem github.com localhost 127.0.0.1 ::1
-
-CLEAN
-mkcert -uninstall
-./mkcert -CAROOT --> Chemin 
-rm -rf $(./mkcert -CAROOT)
-
-
-{ echo -ne "HTTP/1.0 200 OK\r\n\r\n"; cat some.file; } | nc -l -p 8080 //simple server https://unix.stackexchange.com/questions/32182/simple-command-line-http-server
-
-from http.server import HTTPServer, BaseHTTPRequestHandler
-import ssl
-
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-
-    def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b'Beware when you run sudo for anything!')
-
-httpd = HTTPServer(('localhost', 4443), SimpleHTTPRequestHandler)
-
-httpd.socket = ssl.wrap_socket (httpd.socket, 
-        keyfile="/tmp/headi/example.com+5-key.pem", 
-        certfile='/tmp/headi/example.com+5.pem', server_side=True)
-
-httpd.serve_forever()
+* 2 command needs sudo (modifying /etc/host & launch https server on 443)
+* To ease cert regisstration in trust store the PoC use [`mkcert`](https://github.com/FiloSottile/mkcert) but it could be done manually w/ `openssl` 
+    * Hence the "certutil" is a prerequisite to make the PoC works for Chrome or Firefox
+* Need Browser restart to make it works
