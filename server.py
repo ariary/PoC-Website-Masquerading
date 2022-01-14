@@ -8,10 +8,10 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b'Beware when you run sudo for anything!')
 
-httpd = HTTPServer(('localhost', 4443), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', 443), SimpleHTTPRequestHandler)
 
 httpd.socket = ssl.wrap_socket (httpd.socket, 
-        keyfile="/tmp/headi/example.com+5-key.pem", 
-        certfile='/tmp/headi/example.com+5.pem', server_side=True)
+        keyfile="./key.pem", 
+        certfile='./cert.pem', server_side=True)
 
 httpd.serve_forever()

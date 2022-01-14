@@ -1,4 +1,10 @@
 #!/bin/bash
 
-mkcert -uninstall && rm -rf $(./mkcert -CAROOT)
-sed -i '/ThiSiSPoCIMP3rs0N4te/d' /etc/hosts
+./mkcert -uninstall && rm -rf $(./mkcert -CAROOT)
+sudo sed -i '/ThiSiSPoCIMP3rs0N4te/d' /etc/hosts
+rm mkcert
+rm key.pem
+rm cert.pem
+
+# Kil service running on port 443
+sudo kill -9 $(lsof -t -i:443)

