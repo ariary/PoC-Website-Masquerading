@@ -16,26 +16,24 @@ It highlights the importance to monitor the capabilities given to scripts/users 
 
 ### How it works
 
-**~>** Launch `poc-impersonate`
+<strong>~> Launch `poc-impersonate` </strong>
 
 1. Modify `/etc/host` to route the target domain to localhost. **Note**:the content of `/etc/hosts` is used before making DNS resolution at each request so it is priority. <sup>need sudo</sup>
 2. Make locally trusted certificates, it is important to avoid the "warning" page of the browser. Certs could be installed in the trusted store of the whole system, in this PoC it is only installed for the user launching the script.
 3. Launch a local server on port `443`. <sup>need sudo</sup>
 
-**~>** Visit the target website (here `https://www.github.com`) and see that you aren't were you wanted to. (You reach the local server)
+<strong>~> Visit the target website (here `https://www.github.com`) </strong>
+
+See that you aren't were you wanted to. (You reach the local server) 
+
+<strong>~> Clear your tracks with `clean`</strong>
+
+It stops local server, withdraws certs in trust store, and put `/etc/hosts` as it was before the PoC
 
 
 
-Impersonate a website in your local browser
-| 2. crfer |
 
 
-Met en evidence que l'utilisation de sudo [script] est dangereux quand on connait pas le script
-
-1. Modifier etc/host
-2. Lancer serveur local (comme on a sudo on peut utiliser 443): page spawn
-3. utiliser mkcert pour trust le certif
-4. 
 
 curl https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -LO
 
