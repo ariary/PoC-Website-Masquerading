@@ -12,7 +12,7 @@ This a simple PoC on how to impersonnate a website locally.
 
 After that you can imagine multiple scenarios. For example stealing credentials, by making the local server (which impersonates the target website) having the same frontend as the target but interacting with a remote server to exfiltrate the credentials. 
 
-It highlights the importance to monitor the capabilities given to scripts/users etc as it this snipset could be integrated in any malicious script or by any user having root privileges.
+It highlights the importance to monitor the capabilities given to scripts/users etc as this snipset could be integrated in any malicious script or by any user having root privileges. (Don't do this, of course)
 
 ### How it works
 
