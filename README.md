@@ -28,7 +28,7 @@ See that you aren't were you wanted to. (You reach the local server)
 
 <strong>~> Clear your tracks with `clean`</strong>
 
-It stops local server, withdraws certs in trust store, and put `/etc/hosts` as it was before the PoC
+It stops local server, withdraws certs in trust store, and puts `/etc/hosts` as it was before the PoC
 
 
 ### Notes
